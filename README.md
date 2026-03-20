@@ -6,7 +6,7 @@ This machine needs to be on the same network as your spice PC (can be through vp
 Download Repository onto server machine.
 
 Edit custom_componenets/spice/default.ini with your card, pin, side, and ip address + password of your host (pc running spice)
-note: need -iidxpoke and -spiceapi enabled on host
+note: need -iidxpoke (if running IIDX TDJ mode) and -spiceapi enabled on host 
 
 if you do not know the ip address and password of your host it is the same you use for spice companion app, default password is usually changeme.
 
@@ -16,7 +16,20 @@ on Unix (Linux/MacOS) you can simply run the shell scripts
 
 on Windows you can run `python custom_componenets/spice/card_in_single.py --config custom_componenets/spice/default.ini` for single or `python custom_componenets/spice/card_in_both.py --config custom_componenets/spice/default.ini`
 
+for screenshots it is `python3 custom_components/spice/screenshot.py \
+--config default.ini \
+--player 1` with 1 for p2 and 0 for p1
+
+
 Feel free to automate/trigger this however you like
+
+## Home Assistant
+
+If anyone is also using home assistant this is how I put it in my configuration.yaml
+```
+shell_command:
+  run_remote_script: "ssh -o ScrictHostKeyChecking=no -i /config/ssh/id_rsa myserver@192.168.1.XXX 'python /path/to/python/card_in_double.py --config /path/to/default.ini'"
+```
 
 ## Credits
 

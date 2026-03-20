@@ -30,7 +30,9 @@ If anyone is also using home assistant this is how I put it in my configuration.
 shell_command:
   run_remote_script: "ssh -o ScrictHostKeyChecking=no -i /config/ssh/id_rsa myserver@192.168.1.XXX 'python /path/to/python/card_in_double.py --config /path/to/default.ini'"
 ```
-
+![20260319_205923](https://github.com/user-attachments/assets/150f5b99-aee0-4622-a261-11cf065ff542)
+ will not show video of it running for obvious reasons.
+ 
 ## Credits
 
 all credits go to the spice team for creating the spice API
